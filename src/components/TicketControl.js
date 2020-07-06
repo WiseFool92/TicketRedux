@@ -10,6 +10,7 @@ class TicketControl extends React.Component {
 
   constructor(props) {
     super(props);
+    console.log(props);
     this.state = {
       formVisibleOnPage: false,
       selectedTicket: null,
@@ -35,7 +36,7 @@ class TicketControl extends React.Component {
     const { dispatch } = this.props;
     const { id, names, location, issue } = newTicket;
     const action = {
-      type: 'Add_Ticket',
+      type: 'ADD_TICKET',
       id: id,
       names: names,
       location: location,
@@ -46,6 +47,7 @@ class TicketControl extends React.Component {
   }
 
   handleChangingSelectedTicket = (id) => {
+
     const selectedTicket = this.props.masterTicketList[id];
     this.setState({selectedTicket: selectedTicket});
   }
@@ -53,7 +55,7 @@ class TicketControl extends React.Component {
   handleDeletingTicket = (id) => {
     const { dispatch } = this.props;
     const action = {
-      type: 'Delete_Ticket',
+      type: 'DELETE_TICKET',
       id: id
     }
     dispatch(action);
@@ -68,7 +70,7 @@ class TicketControl extends React.Component {
     const { dispatch } = this.props;
     const { id, names, location, issue } = ticketToEdit;
     const action = {
-      type: 'Add_Ticket',
+      type: 'ADD_TICKET',
       id: id,
       names: names,
       location: location,
@@ -111,15 +113,16 @@ class TicketControl extends React.Component {
 
 }
 
-TicketControl.propTypes = {
-  masterTicketList: PropTypes.object
-};
 
 const mapStateToProps = state => {
   return {
     masterTicketList: state // Key-value pairs of state to be mapped from Redux to React component go here.
   }
-}
+};
+
+TicketControl.propTypes = {
+  masterTicketList: PropTypes.object
+};
 
 TicketControl = connect(mapStateToProps)(TicketControl);
 
