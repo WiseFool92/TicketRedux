@@ -47,7 +47,6 @@ class TicketControl extends React.Component {
   }
 
   handleChangingSelectedTicket = (id) => {
-
     const selectedTicket = this.props.masterTicketList[id];
     this.setState({selectedTicket: selectedTicket});
   }
