@@ -1,11 +1,10 @@
-# _Tap Room_
+# _TicketRedux_
 
-#### July 3rd, 2020
+#### July 6rd, 2020
 
 ## Description
 
-_Website that displays the taps avaliable at the local Green Dragon Inn.
-A web application for tap rooms. Where customers can see tap choices and make purchases._
+_Website where the user can create tickets._
 
 ## Setup
 
