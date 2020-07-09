@@ -1,4 +1,5 @@
 import ticketListReducer from "../../reducers/ticket-list-reducer";
+import * as c from './../../actions/ActionTypes';
 
 let action;
 //declare an action but don't define it. Each test will define what the action should be
@@ -37,7 +38,7 @@ describe("ticketListReducer", () => {
   test("Should successfully add new ticket data to masterTicketList", () => {
     const { names, location, issue, id } = ticketData;
     action = {
-      type: "ADD_TICKET",
+      type: c.ADD_TICKET,
       names: names,
       location: location,
       issue: issue,
@@ -57,7 +58,7 @@ describe("ticketListReducer", () => {
   test("Should update ticket data if key already exists using the same ADD_TICKET Reducer", () => {
     const { names, location, issue, id } = updatedTicketData;
     action = {
-      type: "ADD_TICKET",
+      type: c.ADD_TICKET,
       names: names,
       location: location,
       issue: issue,
@@ -76,7 +77,7 @@ describe("ticketListReducer", () => {
 
   test("Should successfully delete a ticket", () => {
     action = {
-      type: "DELETE_TICKET",
+      type: c.DELETE_TICKET,
       id: 1,
     };
     expect(ticketListReducer(currentState, action)).toEqual({
